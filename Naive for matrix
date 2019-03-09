@@ -1,0 +1,15 @@
+void multiply(int a[][N], int b[][N])
+{
+  int c[][N];
+  for (int i = 0; i < N; i++)
+  {
+    for (int j = 0; j < N; j++)
+    {
+       c[i][j] = 0;
+       for (int k = 0; k < N; k++)
+        {
+          c[i] [j] += a[i] [k]*b[k][j];
+        }
+    }
+  }
+}
