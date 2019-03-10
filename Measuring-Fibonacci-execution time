@@ -1,0 +1,26 @@
+public class Mesuring{
+    public static void Fib(int n) {
+        
+        int count = 100, num1 = 0, num2 = 1;
+        System.out.print("Fibonacci Series of "+count+" number:");
+        
+        for (int i = 1; i <= count; i++)
+        {
+            System.out.print(num1+" ");
+            
+            int next = num1 + num2;
+            num1 = num2;
+            num2 = next;
+        }
+    }
+    
+public static void main(String[] args) {
+    
+    long startTime = System.nanoTime();
+    Fib(100000);
+    System.out.print("\n");
+    long stopTime = System.nanoTime();
+    System.out.println(stopTime - startTime);
+}
+
+}
