@@ -1,0 +1,71 @@
+/* Recursive method */
+
+import java.util.*; 
+
+public class oddSum
+{
+
+    public static void main(String[] args)
+    {
+        long startTime = System.nanoTime();
+        int n, sum = 0;
+        n = 10000;
+        for(int i = (n -1); i >= 1; i--)
+        {
+            if(i % 2 != 0){
+               System.out.print(i + " + " );
+               
+            }else{
+                sum = sum + i;
+              
+            }
+            }
+            long endTime = System.nanoTime();
+            long totalTime = endTime - startTime;
+            System.out.println("\n" +"Sum of Odd Numbers:"+sum);
+            System.out.println(totalTime);
+                
+    }
+        
+}
+
+
+/* Iterative Method */
+
+import java.util.*; 
+  
+public class OddNum
+{    
+    // Returns the sum of  
+    // n odd numbers 
+    public static int oddSum(int n) 
+    { 
+        int sum = 0, curr = 1; 
+        for (int i = (n -1); i >= 1; i--) { 
+            sum += curr; 
+            curr += 2; 
+            if (i % 2 != 0){
+            System.out.print(i + " + " );
+             
+            }
+		
+        } 
+         
+        return sum; 
+       
+    }
+      
+    // driver function 
+    public static void main(String[] args) 
+    { 
+        
+        long startTime = System.nanoTime();
+        int n = 10000;
+        System.out.println("\n"+"Sum of Odd Numbers is: " +oddSum(n)); 
+        long endTime = System.nanoTime();
+        System.out.println(endTime - startTime);
+           
+       
+        
+    } 
+}
