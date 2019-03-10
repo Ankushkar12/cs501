@@ -1,0 +1,78 @@
+/*
+*
+* problem1 Please use Substitution method to find Big-O of this recursion
+*
+* T(n) = 0               if n = 1
+  T(n) = T(n-1) + n - 1  if n ≥ 2
+*
+*/
+*/ solution */
+
+T(n) = T(n-1) + n - 1 ____(1)
+T(n-1) = T[(n-1)-1] + (n-1)-1 ____from(1)
+T(n-1) = T(n-2) + n-2
+
+now putting T(n-1) is equation____(1)
+
+T(n) = [T(n-2)+n-2] + n-1
+T(n) = T(n-2) + 2n-3_____(2)
+
+now,
+T(n-2) = T(n-3) + n-3______from(2)
+
+putting T(n-2) in equation____(2)
+T(n) = T(n-3) + n-3 + 2n-3
+T(n) = T(n-3) + 3n-6______(3)
+
+on problem_ _ _ _
+T(n) = T(n-1) + n-1        (first iteration)
+T(n) = T(n-2) + 2n-3       (second iteration)
+T(n) = T(n-3) + 3n-6       (third iteration)
+
+T(n) + t(n-k) + kn-c       (Kth iteration)
+
+finally T(n-k) = T(1)
+ n - k = 1____(i)
+ k = -1 + k____(ii)
+ 
+ now T(n) = T(n-k) + kn - c
+          = T(1) + (n-1)n -c______(i)(ii)
+          
+ T(n) = T(1) + N*N-c
+ hence, T(n) = O(n*n)
+ 
+ ================================================================================
+ 
+ /*
+ *
+ * problem2 Please use Mater Theroem to analyze the following recurrence.
+ *
+ * T(n) = 7* T * (n/2) + 500 * n2
+ *
+ */
+ /*solution*/
+ T(n) = 7* T * (n/2) + 500 * n2
+ 
+ a = 7
+ b = 2
+ f(n) = O(n^2)
+ so, c = 2
+ 
+ logb(a)
+ =log2(7)
+ =2.80073549221
+ so, The condition c < logb(a)
+ if satisfies codition 1
+ then T(n) = 0(n^log2(7))
+ 
+ condition_ _ _ _ _
+ 
+ T(n) = a T(n/b) + f(n)
+ 
+ [1] if f(n) = 0(n^c) where c<logb(a) then
+ T(n) = 0(n^logb(a))
+ [2] if f(n) = 0(n^c) where c = log logb(a) then
+ T(n) = 0((n^c)(log(n)))
+ [3] if f(n) = 0(n^c) where c>logb(a) then
+ T(n) = 0(f(n))
+ 
