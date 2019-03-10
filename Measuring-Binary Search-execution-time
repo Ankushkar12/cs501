@@ -1,0 +1,45 @@
+*
+*
+* Measuring Binary Search execution time in Java
+*
+*/
+ public class BinarySearch { 
+
+    int binarySearch(int arr[], int l, int r, int x) 
+    { 
+        if (r >= l) { 
+            int mid = l + (r - l) / 2; 
+  
+            if (arr[mid] == x) 
+                return mid; 
+                
+            if (arr[mid] > x) 
+                return binarySearch(arr, l, mid - 1, x); 
+  
+            return binarySearch(arr, mid + 1, r, x); 
+        } 
+  
+        return -1; 
+    } 
+  
+    public static void main(String args[]) 
+    { 
+        BinarySearch newSer = new BinarySearch(); 
+        long startTime = System.nanoTime();
+        int arr[] = { 2, 5, 8, 12, 16, 23, 38, 56, 72, 91 }; 
+        int n = arr.length; 
+        int x = 23; 
+        int result=0;
+        for(int i=0; i<10000; i++)
+        {
+         result = newSer.binarySearch(arr, 0, n - 1, x); 
+        }
+        long endTime = System.nanoTime();
+        long executeTime = endTime-startTime;
+        System.out.println("program runing time is: " + executeTime);
+        if (result == -1) 
+            System.out.println("Element not present in index"); 
+        else
+            System.out.println("Element found at index number " + result); 
+    } 
+}
