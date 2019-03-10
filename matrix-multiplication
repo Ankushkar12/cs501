@@ -1,0 +1,57 @@
+/*
+*
+*problem1 Please calculate T(N) for the following three approaches of matrices multiplication
+*
+*/
+/* Naïve Method */
+void multiply(int A[][N], int B[][N], int C[][N])
+{
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+        {
+            C[i][j] = 0;
+            for (int k = 0; k < N; k++)
+            {
+                C[i][j] += A[i][k]*B[k][j];
+            }
+        }
+    }
+}
+
+Time complexity is N^3
+here N = 8
+T(N) = 8^3 = 512
+
+======================================================================================================
+
+/*
+*
+* Divide and Conquer
+*
+*/
+
+Time complexity,
+T(N) = 8T(N/2) + O(N^2)
+     = O(N^log^2^8) 
+     = O(N^log^2^2^3)
+     = O(N^3) (master theorem)
+     = (N^3)
+     =8*8*8
+     =512
+   
+=======================================================================================================
+
+/*
+*
+* Strassen’s Method
+*
+*/
+Time complexity, 
+T(N) = &*T(N/2) + O(N^2)
+addition and substraction of two matrics takes O(N^2)
+from master's theorem according time complexity approximately O(N^2.805) = O(N^3)
+
+T(N) = O(N^3)
+     = 8*8*8
+     =512
